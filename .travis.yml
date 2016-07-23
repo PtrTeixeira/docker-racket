@@ -1,0 +1,7 @@
+sudo: required
+language: ruby
+services: 
+  - docker
+script: 
+  - docker build -t racket .
+  - docker run -it racket
