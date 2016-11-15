@@ -1,8 +1,8 @@
 FROM buildpack-deps:jessie-curl
 
-ENV RACKET_SHA1 5b4af3e4bed35f06c3f51e50fa81760c2d45af03
+ENV RACKET_SHA1 ac3723784ecbb701ef4463988fe8118649edc6b1
 
-RUN wget -qO /tmp/racket.sh https://mirror.racket-lang.org/installers/6.6/racket-6.6-x86_64-linux.sh && \
+RUN wget -qO /tmp/racket.sh https://mirror.racket-lang.org/installers/6.7/racket-6.7-x86_64-linux.sh && \
 /bin/sh /tmp/racket.sh >> /dev/null && \
 rm /tmp/racket.sh
 
