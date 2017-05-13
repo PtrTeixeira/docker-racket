@@ -3,5 +3,11 @@ language: ruby
 services: 
   - docker
 script: 
-  - docker build -t racket .
-  - docker run -it racket
+  - docker build -t ptrteixeira/racket:6.9 -t ptrteixeira/racket:latest .
+  - docker run -it ptrteixeira/racket
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push ptrteixeira/racket:latest;
+    docker push ptrteixeira/racket:6.9;
+    fi
