@@ -1,8 +1,8 @@
 FROM buildpack-deps:bionic-scm
 
-ENV RACKET_SHA1 4184357715fa90cee418457d3e36d3d13c6508a5
+ENV RACKET_SHA1 66a3f340d932fd91f84db35280a4ce831011b711
 
-RUN wget -qO /tmp/racket.sh https://mirror.racket-lang.org/installers/7.2/racket-7.2-x86_64-linux.sh && \
+RUN wget -qO /tmp/racket.sh https://mirror.racket-lang.org/installers/7.3/racket-7.3-x86_64-linux.sh && \
 echo "$RACKET_SHA1 /tmp/racket.sh" | sha1sum -c - && \
 /bin/sh /tmp/racket.sh --unix-style --dest /usr/racket --create-dir && \
 rm /tmp/racket.sh
